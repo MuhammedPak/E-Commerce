@@ -1,0 +1,186 @@
+﻿@using MyEcom.Common.RoomDto
+@model HotelDto
+@{
+    ViewBag.Title = "HotelDetail";
+}
+<div class="col-md-12">
+    <div class="portlet box purple col-md-12">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Hotel Detail
+            </div>
+            <div class="tools">
+                <a href="" class="collapse"> </a>
+                <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                <a href="" class="reload"> </a>
+                <a href="" class="remove"> </a>
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form class="form-horizontal" method="post" role="form" action="/Hotel/UpdateHotel" enctype="multipart/form-data">
+
+                <div class="col-md-8">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Hotel Name</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="Name" value="@Model.Hotel.Name" placeholder="Enter text">
+                            </div>                                       
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email Adress</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                    <input  class="form-control" name="Email" value="@Model.Hotel.Email" placeholder="Email Address">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" class="form-control" placeholder="Password" disabled="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Country</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="Country" value="@Model.Hotel.Country" placeholder="Enter text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">City</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="City" value="@Model.Hotel.City" placeholder="Enter text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Description</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="Description" value="@Model.Hotel.Description" placeholder="Enter text">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    @{
+            if (Model.HotelContent.Restaurant == false)
+            {
+                <div>
+                    <input id="Remember" type="checkbox" value="true" name="Restaurant" />
+                    <input type="hidden" value="false" name="Restaurant" />
+                    <label class="control-label" for="form_control_1">Restaurant</label>
+                </div>
+}
+else
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="Restaurant" checked />
+                <input type="hidden" value="false" name="Restaurant" />
+                <label class="control-label" for="form_control_1">Restaurant</label>
+            </div>
+}
+if (Model.HotelContent.Pool == false)
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="Pool" />
+                <input type="hidden" value="false" name="Pool" />
+                <label class="control-label" for="form_control_1">Pool</label>
+            </div>
+}
+else
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="Pool" checked />
+                <input type="hidden" value="false" name="Pool" />
+                <label class="control-label" for="form_control_1">Pool</label>
+            </div>
+}
+if (Model.HotelContent.Spa == false)
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="Spa" />
+                <input type="hidden" value="false" name="Spa" />
+                <label class="control-label" for="form_control_1">Spa</label>
+            </div>
+}
+else
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="Spa" checked />
+                <input type="hidden" value="false" name="Spa" />
+                <label class="control-label" for="form_control_1">Spa</label>
+            </div>
+}
+if (Model.HotelContent.Gym == false)
+{
+            <div>
+
+                <input id="Remember" type="checkbox" value="true" name="Gym" />
+                <input type="hidden" value="false" name="Gym" />
+                <label class="control-label" for="form_control_1">Gym</label>
+            </div>
+}
+else
+{ <div>
+
+                <input id="Remember" type="checkbox" value="true" name="Gym" />
+                <input type="hidden" value="false" name="Gym" />
+                <label class="control-label" for="form_control_1">Gym</label>
+            </div>
+
+}
+if (Model.HotelContent.RoomService == false)
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="RoomService" />
+                <input type="hidden" value="false" name="RoomService" />
+                <label class="control-label" for="form_control_1">Room Service</label>
+            </div>
+}
+else
+{
+            <div>
+                <input id="Remember" type="checkbox" value="true" name="RoomService" checked />
+                <input type="hidden" value="false" name="RoomService" />
+                <label class="control-label" for="form_control_1">Room Service</label>
+            </div>
+}
+
+                    }
+
+
+
+
+
+
+
+                </div>
+
+                <div class="clearfix"></div>
+                <button type="submit" class="btn green fileinput-exists" style="margin-left:80%;margin-bottom:1%">Update</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,65 @@
+﻿@using MyEcom.Common.RedisDto
+@model UserHomePageDto
+
+@{
+    ViewBag.Title = "Hotel";
+}
+
+@section index{
+    <aside id="colorlib-hero" style="margin-bottom:0%">
+        <div class="flexslider">
+            <ul class="slides">
+                @foreach (var item in Model.Images)
+                {
+
+                        <li style="background-image: url(http://localhost:54435/Content/images/@item.ImageName">
+                            <a href="/Home/Hotel/@item.otelid">
+                                <div class="overlay"></div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                            <div class="slider-text-inner text-center">
+                                                <h2>@Model.Name</h2>
+                                                <h1>@Model.Country @Model.City @Model.Description</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>      
+                }
+
+            </ul>
+        </div>
+    </aside>
+
+}
+
+
+<div class="row" style="margin-top:2%">
+    <div class="wrap-division">
+
+       
+            @foreach (var r in Model.Room)
+            {
+
+                <div class="col-md-6 col-sm-6 animate-box">
+                    <div class="hotel-entry">
+                        <a href="@Url.Action("Room", "Home", new { RoomId =r.RoomId,Otel_id=Model.Id})" class="hotel-img" style="background-image: url(http://localhost:54435/Content/images/@r.RoomImage);">
+                            <p class="price"><span>$@r.Price</span><small> /night</small></p>
+                        </a>
+                        <div class="desc">
+                            <p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+                            <h3><a href="hotel-room.html">@Model.Name</a></h3>
+                            <span class="place">@Model.City, @Model.Country</span>
+                            <p>@Model.Description</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+
+    </div>
+</div>

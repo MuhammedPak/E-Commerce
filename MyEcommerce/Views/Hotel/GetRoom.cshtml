@@ -1,0 +1,203 @@
+﻿@using MyEcom.Common.RoomDto;
+@model RoomDto
+
+<div class="portlet box purple ">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>New Room
+        </div>
+        <div class="tools">
+            <a href="" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="" class="reload"> </a>
+            <a href="" class="remove"> </a>
+        </div>
+    </div>
+
+
+    <div class="portlet-body form">
+        <form class="form-horizontal" method="post" role="form" action="/Hotel/RoomUpdate" enctype="multipart/form-data">
+            <div class="col-md-4">
+                <div>
+                    @if (Model.Wifi == true)
+    {
+                <input id="Remember" value="true" checked type="checkbox" name="Wifi" />
+                <input type="hidden" value="false" name="Wifi" />
+                <label class="control-label" for="form_control_1">Wifi</label>
+}
+else
+{
+                <input id="Remember" value="true" type="checkbox" name="Wifi" />
+                <input type="hidden" value="false" name="Wifi" />
+                <label class="control-label" for="form_control_1">Wifi</label>
+}
+
+                </div>
+
+                <div>
+
+                    @if (Model.TV == true)
+    {<input id="Remember" value="true" checked type="checkbox" name="TV" />
+                <input type="hidden" value="false" name="TV" />
+                <label class="control-label" for="form_control_1">TV</label>
+}
+else
+{ <input id="Remember" value="true" type="checkbox" name="TV" />
+                <input type="hidden" value="false" name="TV" />
+                <label class="control-label" for="form_control_1">TV</label>
+                    }
+
+                </div>
+                <div>
+                    @if (Model.Bathroom == true)
+    {<input id="Remember" value="true" checked type="checkbox" name="Bathroom" />
+                <input type="hidden" value="false" name="Bathroom" />
+                <label class="control-label" for="form_control_1">Bathroom</label>
+}
+else
+{ <input id="Remember" value="true" type="checkbox" name="Bathroom" />
+                <input type="hidden" value="false" name="Bathroom" />
+                <label class="control-label" for="form_control_1">Bathroom</label>
+                    }
+
+
+
+                </div>
+                <div>
+                    @if (Model.Aircon == true)
+    {<input id="Remember" value="true" checked type="checkbox" name="Aircon" />
+                <input type="hidden" value="false" name="Aircon" />
+                <label class="control-label" for="form_control_1">Air Conditioning</label>
+}
+else
+{ <input id="Remember" value="true" type="checkbox" name="Aircon" />
+                <input type="hidden" value="false" name="Aircon" />
+                <label class="control-label" for="form_control_1">Air Conditioning</label>
+}
+
+
+                </div>
+                <div>
+                    @if (Model.Jacuzzi == true)
+    {<input id="Remember" value="true" checked type="checkbox" name="Jacuzzi" />
+                <input type="hidden" value="false" name="Jacuzzi" />
+                <label class="control-label" for="form_control_1">Jacuzzi</label>
+}
+else
+{ <input id="Remember" value="true" type="checkbox" name="Jacuzzi" />
+                <input type="hidden" value="false" name="Jacuzzi" />
+                <label class="control-label" for="form_control_1">Jacuzzi</label>
+}
+
+
+                </div>
+                <div>
+                    @if (Model.MiniBar == true)
+    {<input id="Remember" value="true" checked type="checkbox" name="Minibar" />
+                <input type="hidden" value="false" name="Minibar" />
+                <label class="control-label" for="form_control_1">Mini Bar</label>
+}
+else
+{ <input id="Remember" value="true" type="checkbox" name="Minibar" />
+                <input type="hidden" value="false" name="Minibar" />
+                <label class="control-label" for="form_control_1">Mini Bar</label>
+}
+
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col-md-8">
+                <div class="form-group form-md-line-input">
+                    <label class="col-md-1 control-label" style="margin-left:4%" for="form_control_1">Price</label>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" value="@Model.Price" name="Price">
+                            <div class="form-control-focus"> </div>
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="col-md-1">
+                        <i class="fa fa-bed"></i>
+                    </div>
+
+
+                    <div class="col-md-8" style="margin-left:7%">
+                        <select id="select2-single-input-sm" name="Bed" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                            <option value="@Model.Bed">@Model.Bed</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="col-md-7" style="margin-top:3%">
+                    <div class="col-md-1">
+                        <i class="fa fa bottom">Room Type</i>
+                    </div>
+
+
+                    <div class="col-md-8" style="margin-left:7%">
+                        <select id="select2-single-input-sm" name="RoomType" class="form-control input-sm select2-multiple select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                            <option value="@Model.RoomType">@Model.RoomType </option>
+                            <option value="Standart">Standart </option>
+                            <option value="Suit">Suit</option>
+                            <option value="King">King</option>
+
+                        </select>
+                    </div>
+
+
+                </div>
+                <div class="col-md-7" style="margin-top:3%">
+                    <div class="col-md-1">
+                        <i class="fa fa bottom">Room Number</i>
+                    </div>
+
+
+                    <div class="col-md-8">
+                        <input type="text" class="form-control input-sm" value="@Model.RoomNumber" name="RoomNumber" style="margin-left:12%" id="form_control_1" placeholder="How Many Room">
+                        <div class="form-control-focus"> </div>
+                    </div>
+
+
+                </div>
+                
+                   <input type="hidden" value="@Model.RoomId" name="RoomId"/>
+
+
+
+            </div>
+            <div class="clearfix"></div>
+            <center>
+                <button type="submit" class="btn green col-md-ofset-8 right fileinput-exists" style="margin-left:19%;margin-top:1%;margin-bottom:1%">Update</button>
+            </center>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+

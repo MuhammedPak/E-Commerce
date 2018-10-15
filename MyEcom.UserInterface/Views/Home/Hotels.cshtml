@@ -1,0 +1,92 @@
+﻿@using MyEcom.Common.RedisDto
+
+@model List<UserHomePageDto>
+
+@{
+    /**/
+
+    ViewBag.Title = "Hotels";
+}
+
+
+@section index{
+    <script src="jquery-3.3.1.min.js"></script>
+    <aside id="colorlib-hero" style="margin-bottom:0%">
+        <div class="flexslider">
+            <ul class="slides">
+                @foreach (var item in Model)
+                {
+
+                    foreach (var image in item.Images)
+                    {
+
+                        <li style="background-image: url(http://localhost:54435/Content/images/@image.ImageName">
+                            <a href="/Home/Hotel/@image.otelid">
+                                <div class="overlay"></div>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                            <div class="slider-text-inner text-center">
+                                                <h2>@item.Name</h2>
+                                                <h1>@item.Country @item.City @item.Description</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        break;
+
+                    }
+
+                }
+
+            </ul>
+        </div>
+    </aside>
+
+}
+
+
+<div class="row" style="margin-top:2%;width:100%;height:50%;overflow:hidden" >
+    <div class="wrap-division">
+
+
+        @foreach (var db in Model)
+        {
+
+            <div class="col-md-6 col-sm-6 animate-box">
+                <aside id="colorlib-hero" style="margin-bottom:2%">
+                    <div class="flexslider">
+                        <ul class="slides"style="height:50%;" >
+                            @foreach (var item in db.Images)
+                            {
+
+                                <li style="background-image: url(http://localhost:54435/Content/images/@item.ImageName">
+                                    <a href="/Home/Hotel/@db.Id">
+                                        <div class="overlay"></div>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                                    <div class="slider-text-inner text-center">
+                                                        <h2>@db.Name</h2>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+
+        }
+
+
+    </div>
+</div>

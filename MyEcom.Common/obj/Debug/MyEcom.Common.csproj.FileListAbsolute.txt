@@ -1,0 +1,17 @@
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Common.dll
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Common.pdb
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Domain.dll
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Domain.pdb
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.csprojResolveAssemblyReference.cache
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.dll
+C:\Users\Muhammed\source\repos\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.pdb
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Common.dll
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Common.pdb
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Domain.dll
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\bin\Debug\MyEcom.Domain.pdb
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.dll
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.pdb
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.csprojAssemblyReference.cache
+C:\Users\Muhammed\source\repos\MyECommerce9-26-2018\MyECommerce\MyEcom.Common\obj\Debug\MyEcom.Common.csproj.CopyComplete

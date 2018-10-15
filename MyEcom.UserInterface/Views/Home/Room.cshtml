@@ -1,0 +1,82 @@
+﻿@using MyEcom.Common.UserDto
+@model SingleRoomDto
+
+@{
+
+    ViewBag.Title = "Room";
+}
+
+
+@section index{
+    <aside id="colorlib-hero" style="margin-bottom:0%">
+        <div class="flexslider">
+            <ul class="slides">
+                @foreach (var item in Model.ImageList)
+                {
+
+                    <li style="background-image: url(http://localhost:54435/Content/images/@item.ImageName">
+                        <a href="/Home/Hotel/@item.otelid">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                        <div class="slider-text-inner text-center">
+                                            <h2>@Model.HotelName</h2>
+                                            <h1>Our hotel is located in @Model.Country's @Model.Description district of @Model.City.</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </aside>
+
+}
+
+
+
+    <div class="room-wrap" style="margin-left:0%">
+
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6" style="margin-top:0%">
+                <div class="room-img" style="background-image: url(http://localhost:54435/Content/images/@Model.RoomImage"></div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="desc">
+                    <h2>@Model.RoomType</h2>
+                    <p class="price"><span>$@Model.Price</span> <small>/ night</small></p>
+                    <p>@Model.Bed Bed</p>
+                    @if (Model.Wifi == true)
+                    {
+                        <p>Wifi</p>
+                    }
+                    @if (Model.MiniBar == true)
+                    {
+                        <p>MiniBar</p>
+                    } 
+                    @if (Model.Jacuzzi == true)
+                    {
+                        <p>Jacuzzi</p>
+                    } 
+                    @if (Model.TV == true)
+                    {
+                        <p>TV</p>
+                    } 
+                    @if (Model.Bathroom == true)
+                    {
+                        <p>Bathroom</p>
+                    }
+                    @if (Model.Aircon == true)
+                    {
+                        <p>Aircon</p>
+                    }
+                    <p><a href="@Url.Action("Reservation", "Home", new { RoomId =Model.RoomId,Otel_id=Model.Otel_id})"  class="btn btn-primary">Reservation!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>

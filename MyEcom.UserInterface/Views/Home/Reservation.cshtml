@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+}
+
+
+
+@section index{
+    <aside id="colorlib-hero" style="margin-bottom:0%">
+        <div class="flexslider">
+            <ul class="slides">
+                @foreach (var item in Model.ImageList)
+                {
+
+                    <li style="background-image: url(http://localhost:54435/Content/images/@item.ImageName">
+                        <a href="/Home/Hotel/@item.otelid">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                        <div class="slider-text-inner text-center">
+                                            <h2>@Model.HotelName</h2>
+                                            <h1>Our hotel is located in @Model.Country's @Model.Description district of @Model.City.</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </aside>
+
+}
+
+
+<div class="col-md-12 animate-box fadeInUp animated-fast" style="margin-top:5%">
+    <div class="room-wrap">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="room-img" style="background-image: url(http://localhost:54435/Content/images/@Model.RoomImage"></div>
+
+                <div class="col-lg-6">
+                    <div class="desc">
+                        <h2>@Model.RoomType</h2>
+                        <p class="price"><span>$@Model.Price</span> <small>/ night</small></p>
+                        <p>
+                            <label>  @Model.Bed Bed,</label>
+                            @if (Model.Wifi == true)
+                    {
+                        <label>Wifi</label>
+            }
+                            @if (Model.Aircon == true)
+                    {
+                        <label>Aircon,</label>
+            }    @if (Model.Jacuzzi == true)
+                    {
+                        <label>Jacuzzi</label>
+            }
+            @if (Model.MiniBar == true)
+    {
+        <label>MiniBar</label>
+}
+            @if (Model.TV == true)
+    {
+        <label>TV</label>
+}
+            @if (Model.Bathroom == true)
+    {
+        <label>Bathroom</label>
+}
+
+
+
+
+
+
+
+        </p>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <form action="/Home/AddReservation">
+                <div class="row form-group">
+                    <div class="col-md-12 ">
+                        <label for="fname">Full Name</label>
+                        <input type="text" required id="name" name="name" class="form-control" placeholder="Your firstname">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="fname">E-Mail</label>
+                        <input type="text" required id="email" name="email" class="form-control" placeholder="E-mail">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="lname">Password</label>
+                        <input type="text" required id="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="date">Check-in:</label>
+                            <div class="form-field">
+                                <input type="text" required name="checkin" id="date" class="form-control date" placeholder="Check-in date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="date">Check-out:</label>
+                            <div class="form-field">
+                                <input type="text" required id="date" name="checkout" class="form-control date" placeholder="Check-out date">
+                            </div>
+                        </div>
+
+                    </div>
+                    <input type="hidden" name="otelid" value="@Model.Otel_id" />
+                    <input type="hidden" name="roomid" value="@Model.RoomId" />
+                    <div class="col-md-12">
+                        <input type="submit" name="submit" id="submit" value="Make Reservation" class="btn btn-primary">
+                        <a style="float:right" data-toggle="modal" href="#full">Create Account</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+       
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade modal-full col-lg-12" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+  
+    <div class="modal-dialog modal-full">
+        <div class="modal-content">
+            <form action="/Home/AddUser" method="post">
+                <div class="modal-header">
+                    <input type="hidden" name="roomid" value="@Model.RoomId" />
+                    <input type="hidden" name="hotelid" value="@Model.Otel_id" />
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">Register</h4>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12 ">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="username" name="name" class="form-control" placeholder="Full Name">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="lname">Phone</label>
+                        <input type="text" required id="userphone" name="phone" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="fname">E-Mail</label>
+                        <input type="text" required id="useremail" name="email" class="form-control" placeholder="E-mail">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="lname">Password</label>
+                        <input type="password" required id="userpassword" name="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <input type="submit" required style="margin-right:4%;margin-top:2%;" class="btn btn-primary pull-right" value="Register" />
+
+                </div>
+
+            </form>
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+   
+</div>
+
+<script>
+
+
+    function AddUser(id) {
+        var name = $('#username').val();
+        var phone = $('#userphone').val();
+        var email = $('#useremail').val();
+        var password = $('#userpassword').val();
+        alert(name);
+        $.ajax({
+            type: "POST",
+            url: "/Home/AddUser",
+            data: {
+                "name": name,
+                "phone": phone,
+                "email": email,
+                "password":password ,
+
+            },
+            success: function () {
+                
+            }
+        });
+
+    }
+
+
+
+</script>      
